@@ -67,11 +67,7 @@
       messagingSenderId: "651236371386"
     };
     firebase.initializeApp(config);
-    </script>
 
-
-
-    <script>
     function congoogle(){
       var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -92,5 +88,7 @@
 });
 }
     </script>
+
+
 </body>
 </html>
