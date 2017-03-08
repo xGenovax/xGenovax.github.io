@@ -1,7 +1,7 @@
 var version = 'v1::';
 
 self.addEventListener("install", function(event) {
-  console.log('WORKER: install event in progress.');
+  console.log('WORKER: install event demarrage.');
   event.waitUntil(
     /* The caches built-in is a promise-based API that helps you cache responses,
        as well as finding and deleting them.
@@ -30,14 +30,14 @@ self.addEventListener("install", function(event) {
         ]);
       })
       .then(function() {
-        console.log('WORKER: install completed');
+        console.log('WORKER: install terminée');
       })
   );
 });
 
 
 self.addEventListener("fetch", function(event) {
-  console.log('WORKER: fetch event in progress.');
+  console.log('WORKER: fetch event demarrage.');
 
   /* We should only cache GET requests, and deal with the rest of method in the
      client-side, by handling failed POST,PUT,PATCH,etc. requests.
@@ -46,7 +46,7 @@ self.addEventListener("fetch", function(event) {
     /* If we don't block the event as shown below, then the request will go to
        the network as usual.
     */
-    console.log('WORKER: fetch event ignored.', event.request.method, event.request.url);
+    console.log('WORKER: fetch event ignoré.', event.request.method, event.request.url);
     return;
   }
   /* Similar to event.waitUntil in that it blocks the fetch event on a promise.
@@ -143,7 +143,7 @@ self.addEventListener("activate", function(event) {
   /* Just like with the install event, event.waitUntil blocks activate on a promise.
      Activation will fail unless the promise is fulfilled.
   */
-  console.log('WORKER: activate event in progress.');
+  console.log('WORKER: activate event demarrage.');
 
   event.waitUntil(
     caches
@@ -168,7 +168,7 @@ self.addEventListener("activate", function(event) {
         );
       })
       .then(function() {
-        console.log('WORKER: activate completed.');
+        console.log('WORKER: activate terminée.');
       })
   );
 });
