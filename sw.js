@@ -22,13 +22,11 @@ self.addEventListener("install", function(event) {
 		'/index.html',
 		'/latest.html',
 		'/app.js',
-		'/css/',
-        '/css/style.css',
-        '/js/app2.js',
-		'/images/',
+    '/css/style.css',
+    '/js/app2.js',
 		'/images/aperture.png',
 		'/images/lys.png',
-		'/images/push.png'	
+		'/images/push.png'
         ]);
       })
       .then(function() {
